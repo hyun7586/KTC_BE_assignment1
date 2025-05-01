@@ -4,25 +4,25 @@ public enum OperatorType {
   ADD('+') {
     @Override
     public int operate(int a, int b) {
-      return a+b;
+      return a + b;
     }
   },
   SUBTRACT('-') {
     @Override
     public int operate(int a, int b) {
-      return a-b;
+      return a - b;
     }
   },
   MULTIPLY('*') {
     @Override
     public int operate(int a, int b) {
-      return a*b;
+      return a * b;
     }
   },
   DIVIDE('/') {
     @Override
     public int operate(int a, int b) {
-      return 0;
+      return a / b;
     }
   };
 
