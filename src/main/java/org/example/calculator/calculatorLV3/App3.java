@@ -56,7 +56,7 @@ public class App3 {
       }
       else if (command.equals("list")) {
         System.out.println("비교하고자 하는 값을 입력해 주세요(입력한 값보다 큰 값들만 출력됩니다): ");
-        int target = scanner.nextInt();
+        double target = scanner.nextDouble();
 
         List<Double> list = arithmeticCalculator.getResultList().stream()
             .filter(x -> (x > target))
