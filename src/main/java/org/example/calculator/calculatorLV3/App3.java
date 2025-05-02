@@ -7,26 +7,27 @@ import java.util.Scanner;
 public class App3 {
 
   public static void main(String[] args) {
-    int operand1, operand2;
+    double operand1, operand2;
     char operator;
     String command = "";
 
-    ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
+    // new ArithmeticCalculator<Double>()로 선언해도 됨. Double을 생략해서 컴파일러가 알아서 처리함.
+    ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<>();
     Scanner scanner = new Scanner(System.in);
 
     while (!command.equals("exit")) {
       System.out.println("첫 번째 숫자를 입력하세요: ");
-      operand1 = scanner.nextInt();
+      operand1 = scanner.nextDouble();
 
       System.out.println("두 번째 숫자를 입력하세요: ");
-      operand2 = scanner.nextInt();
+      operand2 = scanner.nextDouble();
 
       System.out.println("사칙연산 기호를 입력하세요: ");
       operator = scanner.next().charAt(0);
 
       // 올바른 사칙연산 기호를 넣은 경우에만 result에 값이 들어옴
       // result 값이 있는 경우에만 resultList에 값을 추가
-      Optional<Integer> result = arithmeticCalculator.calculate(operand1, operand2, operator);
+      Optional<Double> result = arithmeticCalculator.calculate(operand1, operand2, operator);
       if (result.isPresent()) {
         arithmeticCalculator.getResultList().add(result.get());
       }
@@ -43,8 +44,8 @@ public class App3 {
       if (command.equals("remove")) {
         arithmeticCalculator.removeResult();
 
-        List<Integer> list = arithmeticCalculator.getResultList();
-        for (Integer each : list) {
+        List<Double> list = arithmeticCalculator.getResultList();
+        for (Double each : list) {
           System.out.print(each + " ");
         }
         System.out.println("\n출력완료");
@@ -57,11 +58,11 @@ public class App3 {
         System.out.println("비교하고자 하는 값을 입력해 주세요(입력한 값보다 큰 값들만 출력됩니다): ");
         int target = scanner.nextInt();
 
-        List<Integer> list = arithmeticCalculator.getResultList().stream()
+        List<Double> list = arithmeticCalculator.getResultList().stream()
             .filter(x -> (x > target))
             .toList();
 
-        for (Integer each : list) {
+        for (Double each : list) {
           System.out.print(each + " ");
         }
         System.out.println("\n출력완료");

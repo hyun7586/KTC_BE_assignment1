@@ -5,28 +5,28 @@ import java.util.Optional;
 public enum OperatorType {
   ADD('+') {
     @Override
-    public Optional<Integer> operate(int a, int b) {
+    public Optional<Double> operate(double a, double b) {
       System.out.println("결과: " + (a+b));
       return Optional.of(a + b);
     }
   },
   SUBTRACT('-') {
     @Override
-    public Optional<Integer> operate(int a, int b) {
+    public Optional<Double> operate(double a, double b) {
       System.out.println("결과: " + (a-b));
       return Optional.of(a - b);
     }
   },
   MULTIPLY('*') {
     @Override
-    public Optional<Integer> operate(int a, int b) {
+    public Optional<Double> operate(double a, double b) {
       System.out.println("결과: " + (a*b));
       return Optional.of(a * b);
     }
   },
   DIVIDE('/') {
     @Override
-    public Optional<Integer> operate(int a, int b) {
+    public Optional<Double> operate(double a, double b) {
       if(b==0){
         System.out.println("0으로는 나눌 수 없습니다");
         return Optional.empty();
@@ -56,5 +56,5 @@ public enum OperatorType {
     return null;
   }
 
-  public abstract Optional<Integer> operate(int a, int b);
+  public abstract Optional<Double> operate(double a, double b);
 }
