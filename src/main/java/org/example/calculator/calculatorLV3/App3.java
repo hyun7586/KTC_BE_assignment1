@@ -1,10 +1,10 @@
-package org.example.calculator;
+package org.example.calculator.calculatorLV3;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
-public class App {
+public class App3 {
 
   public static void main(String[] args) {
     int operand1, operand2;
@@ -28,12 +28,13 @@ public class App {
       // result 값이 있는 경우에만 resultList에 값을 추가
       Optional<Integer> result = arithmeticCalculator.calculate(operand1, operand2, operator);
       if (result.isPresent()) {
-        arithmeticCalculator.addResultList(result.get());
+        arithmeticCalculator.getResultList().add(result.get());
       }
 
       System.out.println("---\n더 계산하시겠습니까?");
       System.out.println("'remove': 첫번째 결과값 삭제 후 결과 list 출력");
       System.out.println("'list': list 내에서 특정 값보다 큰 결과값들만 출력");
+      System.out.println("'exit': 계산을 종료합니다");
       System.out.println("이외 다른 문자를 입력하면 계속 계산합니다\n---");
       command = scanner.next();
 
@@ -47,9 +48,12 @@ public class App {
           System.out.print(each + " ");
         }
         System.out.println("\n출력완료");
+        System.out.println("---\n더 계산하시겠습니까?");
+        System.out.println("'exit': 계산을 종료합니다");
+        System.out.println("이외 다른 문자를 입력하면 계속 계산합니다\n---");
+        command = scanner.next();
       }
-
-      if (command.equals("list")) {
+      else if (command.equals("list")) {
         System.out.println("비교하고자 하는 값을 입력해 주세요(입력한 값보다 큰 값들만 출력됩니다): ");
         int target = scanner.nextInt();
 
@@ -60,7 +64,11 @@ public class App {
         for (Integer each : list) {
           System.out.print(each + " ");
         }
-        System.out.println("\n출력완료\n---");
+        System.out.println("\n출력완료");
+        System.out.println("---\n더 계산하시겠습니까?");
+        System.out.println("'exit': 계산을 종료합니다");
+        System.out.println("이외 다른 문자를 입력하면 계속 계산합니다\n---");
+        command = scanner.next();
       }
     }
 
