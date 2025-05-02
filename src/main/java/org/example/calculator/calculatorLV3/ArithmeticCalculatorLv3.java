@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class ArithmeticCalculator<T> {
+public class ArithmeticCalculatorLv3<T> {
 
   private List<T> resultList = new ArrayList<>();
 
   public Optional<Double> calculate(T a, T b, char operator) {
-    OperatorType op = OperatorType.fromSymbol(operator);
+    OperatorTypeLv3 op = OperatorTypeLv3.fromSymbol(operator);
     if(op==null)  return Optional.empty();
 
     if(a instanceof Number && b instanceof Number)  return op.operate((double)a, (double)b);

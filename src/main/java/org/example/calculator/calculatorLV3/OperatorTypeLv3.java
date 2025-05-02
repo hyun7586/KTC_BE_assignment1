@@ -2,7 +2,7 @@ package org.example.calculator.calculatorLV3;
 
 import java.util.Optional;
 
-public enum OperatorType {
+public enum OperatorTypeLv3 {
   ADD('+') {
     @Override
     public Optional<Double> operate(double a, double b) {
@@ -38,15 +38,15 @@ public enum OperatorType {
 
   private final char symbol;
 
-  OperatorType(char symbol) {
+  OperatorTypeLv3(char symbol) {
     this.symbol = symbol;
   }
 
   // enum class는 외부에서 new 키워드로 객체를 생성할 수 없다.
   // 주어진 symbol 값과 같은 값을 가진 value를 찾아서 OperatorType 객체를 반환해 줘야 한다.
   // fromSymbol() 메서드가 생성자의 역할을 해 준다.
-  public static OperatorType fromSymbol(char ch){
-    for(OperatorType op : OperatorType.values()){
+  public static OperatorTypeLv3 fromSymbol(char ch){
+    for(OperatorTypeLv3 op : OperatorTypeLv3.values()){
       if(op.symbol==ch){
         return op;
       }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Calculator {
+public class CalculatorLv2 {
 
   private List<Integer> resultList = new ArrayList<>();
 
