@@ -1,4 +1,4 @@
-package org.example.calculator;
+package org.example.calculator.calculatorLV3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class ArithmeticCalculator {
 
-  private final List<Integer> resultList = new ArrayList<>();
+  private List<Integer> resultList = new ArrayList<>();
 
   public Optional<Integer> calculate(int a, int b, char operator) {
     OperatorType op = OperatorType.fromSymbol(operator);
@@ -22,8 +22,8 @@ public class ArithmeticCalculator {
   }
 
   // setter
-  public void addResultList(int element) {
-    resultList.add(element);
+  public void setResultList(List<Integer> resultList) {
+    this.resultList=resultList;
   }
 
   // delete

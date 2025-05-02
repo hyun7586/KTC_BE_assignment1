@@ -1,4 +1,4 @@
-package org.example.calculator;
+package org.example.calculator.calculatorLV3;
 
 import java.util.Optional;
 
@@ -20,7 +20,7 @@ public enum OperatorType {
   MULTIPLY('*') {
     @Override
     public Optional<Integer> operate(int a, int b) {
-      System.out.println("결과: " + a*b);
+      System.out.println("결과: " + (a*b));
       return Optional.of(a * b);
     }
   },
@@ -31,7 +31,7 @@ public enum OperatorType {
         System.out.println("0으로는 나눌 수 없습니다");
         return Optional.empty();
       }
-      System.out.println("결과: " + a/b);
+      System.out.println("결과: " + (a/b));
       return Optional.of(a / b);
     }
   };

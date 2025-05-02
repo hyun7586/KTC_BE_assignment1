@@ -1,10 +1,8 @@
 package org.example.calculator.calculatorLV1;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 
-public class App {
+public class App1 {
 
   public static void main(String[] args) {
     int operand1, operand2;
